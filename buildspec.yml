@@ -1,0 +1,15 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: corretto21
+  pre_build:
+    commands:
+      - AWS_ACCOUNT_ID=$(echo ${CODEBUILD_BUILD_ARN} | cut -f 5 -d :)
+      - export CODEARTIFACT_AUTH_TOKEN=`aws codeartifact get-authorization-token --domain malos-test-artifact --domain-owner $AWS_ACCOUNT_ID --region $AWS_DEFAULT_REGION --query authorizationToken --output text`
+  build:
+    commands:
+      - cp settings.xml ~/.m2/
+      - mvn package
+      - mvn deploy

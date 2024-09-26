@@ -1,0 +1,26 @@
+{
+  "LEVEL": "FATAL",
+  "APPLICATION": {
+    "$resolver": "mdc",
+    "stringified": true,
+    "key": "BATCH-JOB-ID"
+  },
+  "AWS-TRACE-UUID": {
+    "$resolver": "mdc",
+    "stringified": true,
+    "key": "AWS-TRACE-UUID"
+  },
+  "MESSAGE": {
+    "CONTENTS": {
+      "$resolver": "message",
+      "stringified": true
+    },
+    "STACKTRACE":{
+      "$resolver": "exception",
+      "field": "stackTrace",
+      "stackTrace": {
+        "stringified": true
+      }
+    }
+  }
+}

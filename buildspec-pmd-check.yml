@@ -1,0 +1,14 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: corretto21
+  pre_build:
+    commands:
+      - mvn install
+  build:
+    commands:
+      - echo =======================pmdチェック開始=============================
+      - mvn pmd:pmd
+      - echo =======================pmdチェック完了=============================

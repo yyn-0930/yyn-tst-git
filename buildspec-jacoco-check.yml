@@ -1,0 +1,17 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: corretto21
+  build:
+    commands:
+      - echo =======================Jacocoチェック開始=============================
+      - mvn clean test
+      - mvn jacoco:report
+      - echo =======================Jacocoチェック完了=============================
+reports:
+  jacoco-reports:
+    files:
+      - 'target/site/jacoco/jacoco.xml'
+    file-format: 'JACOCOXML'

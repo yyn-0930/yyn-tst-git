@@ -1,0 +1,11 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: corretto21
+  build:
+    commands:
+      - echo =======================checkstyleチェック開始=============================
+      - mvn checkstyle:check
+      - echo =======================checkstyleチェック完了=============================
