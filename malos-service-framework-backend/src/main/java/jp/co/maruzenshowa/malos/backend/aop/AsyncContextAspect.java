@@ -33,6 +33,7 @@ public class AsyncContextAspect {
   /**
    * メソッド名 ： SQSリスナーアスペクト. <br>
    * メソッド名 ： SQSリスナーアスペクト. <br>
+   * ソッド名 ： SQSリスナーアスペクト. <br>
    * メソッド説明 ： SqsListenerのアノテーションにアスペクトを行う <br>
    * <br>
    */
